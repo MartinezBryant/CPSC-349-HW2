@@ -9,34 +9,27 @@
 <div class="header_container">
     <h1>Movie Database</h1>
 </div>
-<div class="search_container">
-    <form id="form">
-        <input type="text" placeholder="Search for a movie..." id="search" class="search">
-        <select id="sort" class="sort-dropdown">
-            <option value="sort_by">Sort By</option>
-            <option value="release_asc">Release Date (Asc)</option>
-            <option value="release_desc">Release Date (Desc)</option>
-            <option value="rating_asc">Rating (Asc)</option>
-            <option value="rating_desc">Rating (Desc)</option>
-        </select>
-    </form>
+<div id="movie-container">
+    <div class="search_container">
+        <form id="form">
+            <input type="text" placeholder="Search for a movie..." id="search" class="search">
+            <select id="sort" class="sort-dropdown">
+                <option value="">Sort By</option>
+                <option value="release_date.asc">Release Date (Asc)</option>
+                <option value="release_date.desc">Release Date (Desc)</option>
+                <option value="vote_average.asc">Rating (Asc)</option>
+                <option value="vote_average.desc">Rating (Desc)</option>
+            </select>
+        </form>
+    </div>
+    <div class="body_container"></div>
+    <div class="pagination">
+        <div class="page disabled" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div id="total-results" class="total-results"></div>
+        <div class="page" id="next">Next Page</div>
+    </div>
 </div>
-<div class="body_container">
-    
-
-
-
-
-
-
-
-</div>
-<div class="pagination">
-    <div class="page disabled" id="prev">Previous Page</div>
-    <div class="current" id="current">1</div>
-    <div class="page" id="next">Next Page</div>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
