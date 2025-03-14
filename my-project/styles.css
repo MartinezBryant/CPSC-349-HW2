@@ -1,16 +1,16 @@
-.body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 .header_container {
     background-color: #384959;
     padding: 30px;
     text-align: center;
     font-size: large;
     color: white;
-    
 }
 
 .header {
@@ -19,7 +19,6 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 0 20px;
-    
 }
 
 .search_container {
@@ -35,7 +34,6 @@
     gap: 15px;
     width: 100%;
     flex-wrap: wrap;
-    
 }
 
 .search, .sort-dropdown {
@@ -43,7 +41,7 @@
     border: 2px solid #ccc;
     border-radius: 10px;
     width: 100%;
-    max-width: 300px; 
+    max-width: 300px;
 }
 
 .sort-dropdown {
@@ -57,7 +55,7 @@
     text-align: center;
     color: #384959;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -69,6 +67,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow: hidden;
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold;
 }
 
 .movie-poster {
@@ -82,7 +82,6 @@
 .movie-card h3 {
     margin: 10px 0;
     font-size: 1.1rem;
-    
 }
 
 .movie-card p {
@@ -97,29 +96,33 @@
     margin: 10px 30px;
     align-items: center;
     color: black;
-    
 }
 
-.page {
-    padding: 15px;
+#prev, #next {
+    padding: 15px 30px;               /* Same padding to make buttons equal size */
+    border: 2px solid lightblue;      /* Light blue border */
+    background-color: #384959;        /* Dark background */
+    color: white;                     /* White font */
+    border-radius: 8px;               /* Rounded corners */
+    font-size: 1rem;                  /* Standard font size */
     cursor: pointer;
-    text-align: center;
-    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
-.page:hover {
-    background-color: #ddd; 
+#prev:hover, #next:hover {
+    background-color: #555;           
 }
 
-.page.disabled {
+.page_disabled {
     cursor: not-allowed;
     color: gray;
     background-color: #f0f0f0;
 }
 
+
 .current {
     border-radius: 50%;
     font-size: 20px;
+    font-weight: bold;
+    color: black;                     
 }
-

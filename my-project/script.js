@@ -9,16 +9,21 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const currentPageElement = document.getElementById('current'); 
 
+window.addEventListener('load', () => {
+    sortDropdown.value = ''; 
+    fetchMovies(currentPage);
+});
+
 async function fetchMovies(page = 1, searchQuery = '', sortBy = '') {
     try {
-        let url = `${baseUrl}/movie/popular?api_key=${apiKey}&page=${page}`;
+        let url = `${baseUrl}/movie/popular?api_key=${apiKey}&page=${page}`; 
 
         if (searchQuery) {
             url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${encodeURIComponent(searchQuery)}&page=${page}`;
         }
 
-        if (sortBy) {
-            url += `&sort_by=${sortBy}`;
+        if (!searchQuery && sortBy) {
+            url = `${baseUrl}/discover/movie?api_key=${apiKey}&page=${page}&sort_by=${sortBy}`;
         }
 
         const response = await fetch(url);
@@ -44,7 +49,7 @@ function displayMovies(movies) {
             <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" class="movie-poster" />
             <h3>${movie.title}</h3>
             <p>Release Date: ${movie.release_date}</p>
-            <p>Rating: ${movie.vote_average}</p>
+            <p>Rating: ${movie.vote_average.toFixed(1)}</p>
         `;
         movieContainer.appendChild(movieCard);
     });
