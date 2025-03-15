@@ -44,6 +44,11 @@
     max-width: 300px;
 }
 
+.search::placeholder {
+    color: #423c3c;
+    font-weight: bold;
+}
+
 .sort-dropdown {
     cursor: pointer;
     background-color: #f0f0f0;
