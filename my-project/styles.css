@@ -1,9 +1,17 @@
 
+/* 
+// Bryant Martinez
+// CWID: 886742121
+// Bryantmartinez322@csu.fullerton.edu
+// Movie DataBase Assingment 
+*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* Header Display Style */
 
 .header_container {
     background-color: #384959;
@@ -21,6 +29,7 @@
     padding: 0 20px;
 }
 
+/* Search Container Style */
 .search_container {
     background-color: #233544;
     padding: 10px;
@@ -53,7 +62,7 @@
     cursor: pointer;
     background-color: #f0f0f0;
 }
-
+/* Background Display Style */
 .body_container {
     background-color: #dbdee0;
     padding: 30px;
@@ -63,7 +72,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
-
+/* Movie Container Style */
 .movie-card {
     background-color: #ffffff;
     color: #333;
@@ -94,6 +103,7 @@
     color: #555;
 }
 
+/* Button Display Style */
 .pagination {
     display: flex;
     justify-content: center;
@@ -104,12 +114,12 @@
 }
 
 #prev, #next {
-    padding: 15px 30px;               /* Same padding to make buttons equal size */
-    border: 2px solid lightblue;      /* Light blue border */
-    background-color: #384959;        /* Dark background */
-    color: white;                     /* White font */
-    border-radius: 8px;               /* Rounded corners */
-    font-size: 1rem;                  /* Standard font size */
+    padding: 15px 30px;               
+    border: 2px solid lightblue;      
+    background-color: #384959;        
+    color: white;              
+    border-radius: 8px;             
+    font-size: 1rem;                 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }

@@ -1,6 +1,17 @@
+// Bryant Martinez
+// CWID: 886742121
+// Bryantmartinez322@csu.fullerton.edu
+// Movie DataBase Assingment
+
+
+
+// ------------------------------- Config Required Variables, with APIkey ----------------------------------------------------------------------
 const apiKey = '505776814e8c987c58807b64619e06c6'; 
 const baseUrl = 'https://api.themoviedb.org/3';
 let currentPage = 1;
+
+
+// ------------------------------- DOM Elements Used && Referenced ----------------------------------------------------------------------------
 
 const searchInput = document.getElementById('search');
 const sortDropdown = document.getElementById('sort');
@@ -9,10 +20,13 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const currentPageElement = document.getElementById('current'); 
 
+// ------------------------------- Window Page Load-UP ------------------------------------------------------------------------------------------
+
 window.addEventListener('load', () => {
     sortDropdown.value = ''; 
     fetchMovies(currentPage);
 });
+// ------------------------------- Fetch Movies From API Key For [SearchQuery, Sort] Requirements ------------------------------------------------
 
 async function fetchMovies(page = 1, searchQuery = '', sortBy = '') {
     try {
@@ -39,6 +53,7 @@ async function fetchMovies(page = 1, searchQuery = '', sortBy = '') {
         console.error("Error fetching movies:", error);
     }
 }
+// ------------------------------- Display Movie Card Function ---------------------------------------------------------------------------
 
 function displayMovies(movies) {
     movieContainer.innerHTML = ''; 
@@ -54,6 +69,7 @@ function displayMovies(movies) {
         movieContainer.appendChild(movieCard);
     });
 }
+// ------------------------------- Update Button Pagination --- ---------------------------------------------------------------------------
 
 function updatePagination(currentPageNum, totalPages) {
     if (totalPages > 0) {
@@ -66,6 +82,8 @@ function updatePagination(currentPageNum, totalPages) {
     nextButton.classList.toggle('disabled', currentPageNum === totalPages || totalPages === 0);
     currentPage = currentPageNum;
 }
+
+// ------------------------------- Event Listeners for [Sort, Prev, Next, Search] Functions ---------------------------------------------------
 
 searchInput.addEventListener('input', () => {
     const searchQuery = searchInput.value;
@@ -86,5 +104,5 @@ prevButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     fetchMovies(currentPage + 1, searchInput.value, sortDropdown.value);
 });
-
+// ------------------------------- Fetch Movie Call ----------------------
 fetchMovies(currentPage);

@@ -1,3 +1,9 @@
+<!-- 
+ // Bryant Martinez
+// CWID: 886742121
+// Bryantmartinez322@csu.fullerton.edu
+// Movie DataBase Assingment
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +12,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-----------------------Header------------------------->
 <div class="header_container">
     <h1>Movie Database</h1>
 </div>
+<!-----------------------Movie Container------------------------->
+
 <div id="movie-container">
     <div class="search_container">
         <form id="form">
             <input type="text" placeholder="Search for a movie..." id="search" class="search">
+<!-----------------------Sort Dropdown Container------------------------->
             <select id="sort" class="sort-dropdown">
                 <option value="">Sort By</option>
                 <option value="release_date.asc">Release Date (Asc)</option>
@@ -22,6 +32,8 @@
             </select>
         </form>
     </div>
+<!-----------------------Button Config (pagination)------------------------->
+
     <div class="body_container"></div>
     <div class="pagination">
         <div class="page_disabled" id="prev">Previous</div>
